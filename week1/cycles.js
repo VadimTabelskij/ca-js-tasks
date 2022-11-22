@@ -10,7 +10,11 @@ console.groupCollapsed('WHILE');
 {
   console.groupCollapsed('1. Sukurkite ciklą kuris 5 kartus atspausdintų "Sveikas Pasauli"');
   {
-
+    let number = 0;
+    while (number < 5) {
+      console.log("Sveikas Pasauli");
+      number++;
+    }
   }
   console.groupEnd();
   console.groupCollapsed('2. Sukurkite ciklą kuris atspausdintų nuo 1 iki 5. Naudojant <');
@@ -225,7 +229,9 @@ console.groupCollapsed('FOR');
 {
   console.groupCollapsed('1. Sukurkite ciklą kuris 5 kartus atspausdintų "Sveikas Pasauli"');
   {
-
+    for (let number = 1; number < 6; number++) {
+      console.log("Sveikas Pasauli")
+    }
   }
   console.groupEnd();
   console.groupCollapsed('2. Sukurkite ciklą kuris atspausdintų nuo 1 iki 5. Naudojant <');
@@ -307,7 +313,7 @@ console.groupCollapsed('FOR');
   console.groupEnd();
   console.groupCollapsed('13. Sukurkite ciklą kuris atspausdintų nuo 2 iki 1. Naudojant >=');
   {
-    for(let number =2; number >=1; number--) {
+    for (let number = 2; number >= 1; number--) {
       console.log(number)
     }
 
