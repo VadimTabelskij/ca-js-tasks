@@ -15,3 +15,24 @@ console.log(sentence1);
 // 3. sun is in the sky
 // 4. apple is with my sister
 // 5. Papildyti masyvą žodžiais, ir sukurti dar 3 +-logiškus sakinius.
+let sentence2 = nouns[2] + helpers[7] + helpers[4] + helpers[7] + helpers[2] + helpers[7] + helpers[6] + helpers[7] + nouns[4];
+//              'hammer'     ' '          'is'          ' '         'on'          ' '         'the'         ' '        'table'
+console.log(sentence2);
+let sentence3 = nouns[3] + helpers[7] + helpers[4] + helpers[7] + helpers[0] + helpers[7] + helpers[6] + helpers[7] + nouns[5];
+//               'sun'         ' '          'is'          ' '        'in'          ' '         'the'         ' '       'sky'
+console.log(sentence3);
+let sentence4 = nouns[0] + helpers[7] + helpers[4] + helpers[7] + helpers[1] + helpers[7] + helpers[3] + helpers[7] + nouns[1];
+//              'apple'        ' '          'is'          ' '       'with'         ' '         'my'        ' '        'sister'
+console.log(sentence4);
+//5 apple is on the table
+let sentence5 = nouns[0] + helpers[7] + helpers[4] + helpers[7] + helpers[2] + helpers[7] + helpers[6] + helpers[7] + nouns[4];
+//              'apple'     ' '          'is'          ' '         'on'          ' '         'the'         ' '        'table'
+console.log(sentence5);
+//6 hammer is in the lake
+let sentence6 = nouns[2] + helpers[7] + helpers[4] + helpers[7] + helpers[0] + helpers[7] + helpers[6] + helpers[7] + nouns[6];
+//              'hammer'     ' '          'is'          ' '         'in'          ' '         'the'         ' '       'lake'
+console.log(sentence6);
+//7 my sister is on the sky
+let sentence7 = helpers[3] + helpers[7] + nouns[1] + helpers[7] + helpers[4] + helpers[7] + helpers[2] + helpers[7] + helpers[6] + helpers[7] + nouns[5];
+//                'my'          ' '       'sister'      ' '         'is'          ' '         'on'          ' '          'the'       ' '         'sky'
+console.log(sentence7);
