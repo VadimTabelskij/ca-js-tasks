@@ -4,7 +4,7 @@
     * su for ciklu
 */
 
-const numbers = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144];
+const Numbers = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144];
 
 console.groupCollapsed('WHILE');
 {
@@ -15,66 +15,121 @@ console.groupCollapsed('WHILE');
   console.groupEnd();
   console.groupCollapsed('2. Sukurkite ciklą kuris atspausdintų nuo 1 iki 5. Naudojant <');
   {
-
+    let number = 1;
+    while (number < 6) {
+      console.log(number);
+      number++;
+    }
   }
   console.groupEnd();
   console.groupCollapsed('3. Sukurkite ciklą kuris atspausdintų nuo 3 iki 7. Naudojant <');
   {
-
+    let number = 3;
+    while (number < 8) {
+      console.log(number);
+      number++;
+    }
   }
   console.groupEnd();
   console.groupCollapsed('4. Sukurkite ciklą kuris atspausdintų nuo -3 iki 2. Naudojant <');
   {
+    let number = -3;
+    while (number < 3) {
+      console.log(number);
+      number++;
+    }
 
   }
   console.groupEnd();
   console.groupCollapsed('5. Sukurkite ciklą kuris atspausdintų nuo 1 iki 5. Naudojant <=');
   {
+    let number = 1;
+    while (number <= 5) {
+      console.log(number);
+      number++;
+    }
 
   }
   console.groupEnd();
   console.groupCollapsed('6. Sukurkite ciklą kuris atspausdintų nuo 3 iki 7. Naudojant <=');
   {
-
+    let number = 3;
+    while (number <= 7) {
+      console.log(number);
+      number++;
+    }
   }
   console.groupEnd();
   console.groupCollapsed('7. Sukurkite ciklą kuris atspausdintų nuo -3 iki 2. Naudojant <=');
   {
+    let number = -3;
+    while (number <= 2) {
+      console.log(number);
+      number++;
+    }
 
   }
   console.groupEnd();
   console.groupCollapsed('8. Sukurkite ciklą kuris atspausdintų nuo 2 iki -3. Naudojant >');
   {
-
+    let number = 2;
+    while (number > -4) {
+      console.log(number);
+      number--;
+    }
   }
   console.groupEnd();
   console.groupCollapsed('9. Sukurkite ciklą kuris atspausdintų nuo -5 iki -10. Naudojant >');
   {
+    let number = -5;
+    while (number > -11) {
+      console.log(number);
+      number--;
+    }
 
   }
   console.groupEnd();
   console.groupCollapsed('10. Sukurkite ciklą kuris atspausdintų nuo 2 iki 1. Naudojant >');
   {
-
+    let number = 2;
+    while (number > 0) {
+      console.log(number);
+      number--;
+    }
   }
   console.groupEnd();
   console.groupCollapsed('11. Sukurkite ciklą kuris atspausdintų nuo 2 iki -3. Naudojant >=');
   {
+    let number = 2;
+    while (number >= -3) {
+      console.log(number);
+      number--;
+    }
 
   }
   console.groupEnd();
   console.groupCollapsed('12. Sukurkite ciklą kuris atspausdintų nuo -5 iki -10. Naudojant >=');
   {
-
+    let number = -5;
+    while (number >= -10) {
+      console.log(number);
+      number--;
+    }
   }
   console.groupEnd();
   console.groupCollapsed('13. Sukurkite ciklą kuris atspausdintų nuo 2 iki 1. Naudojant >=');
   {
+    let number = 2;
+    while (number >= 1) {
+      console.log(number);
+      number--;
+    }
 
   }
   console.groupEnd();
   console.groupCollapsed('14. Sukurkite ciklą kuris atspausdintų 2, 4, 6, 8, 10. Naudojant žingsnį +2');
   {
+
 
   }
   console.groupEnd();
@@ -175,61 +230,86 @@ console.groupCollapsed('FOR');
   console.groupEnd();
   console.groupCollapsed('2. Sukurkite ciklą kuris atspausdintų nuo 1 iki 5. Naudojant <');
   {
-
+    for (let number = 1; number < 6; number++) {
+      console.log(number)
+    }
   }
   console.groupEnd();
   console.groupCollapsed('3. Sukurkite ciklą kuris atspausdintų nuo 3 iki 7. Naudojant <');
   {
-
+    for (let number = 3; number < 8; number++) {
+      console.log(number)
+    }
   }
   console.groupEnd();
   console.groupCollapsed('4. Sukurkite ciklą kuris atspausdintų nuo -3 iki 2. Naudojant <');
   {
-
+    for (let number = -3; number < 3; number++) {
+      console.log(number)
+    }
   }
   console.groupEnd();
   console.groupCollapsed('5. Sukurkite ciklą kuris atspausdintų nuo 1 iki 5. Naudojant <=');
   {
-
+    for (let number = 1; number <= 5; number++) {
+      console.log(number)
+    }
   }
   console.groupEnd();
   console.groupCollapsed('6. Sukurkite ciklą kuris atspausdintų nuo 3 iki 7. Naudojant <=');
   {
-
+    for (let number = 3; number <= 7; number++) {
+      console.log(number)
+    }
   }
   console.groupEnd();
   console.groupCollapsed('7. Sukurkite ciklą kuris atspausdintų nuo -3 iki 2. Naudojant <=');
   {
-
+    for (let number = -3; number <= 2; number++) {
+      console.log(number)
+    }
   }
   console.groupEnd();
   console.groupCollapsed('8. Sukurkite ciklą kuris atspausdintų nuo 2 iki -3. Naudojant >');
   {
-
+    for (let number = 2; number > -4; number--) {
+      console.log(number)
+    }
   }
   console.groupEnd();
   console.groupCollapsed('9. Sukurkite ciklą kuris atspausdintų nuo -5 iki -10. Naudojant >');
   {
-
+    for (let number = -5; number > -11; number--) {
+      console.log(number)
+    }
   }
   console.groupEnd();
   console.groupCollapsed('10. Sukurkite ciklą kuris atspausdintų nuo 2 iki 1. Naudojant >');
   {
-
+    for (let number = 2; number > 0; number--) {
+      console.log(number)
+    }
   }
   console.groupEnd();
   console.groupCollapsed('11. Sukurkite ciklą kuris atspausdintų nuo 2 iki -3. Naudojant >=');
   {
-
+    for (let number = 2; number >= -3; number--) {
+      console.log(number)
+    }
   }
   console.groupEnd();
   console.groupCollapsed('12. Sukurkite ciklą kuris atspausdintų nuo -5 iki -10. Naudojant >=');
   {
-
+    for (let number = -5; number >= -10; number--) {
+      console.log(number)
+    }
   }
   console.groupEnd();
   console.groupCollapsed('13. Sukurkite ciklą kuris atspausdintų nuo 2 iki 1. Naudojant >=');
   {
+    for(let number =2; number >=1; number--) {
+      console.log(number)
+    }
 
   }
   console.groupEnd();
