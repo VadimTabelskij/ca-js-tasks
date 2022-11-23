@@ -1,7 +1,7 @@
 let numbers = [46, 1, 4, 78, 9, 5, 1, 4, 5, 5];
 // indeksai:    0  1  2   3  4  5  6  7  8  9
-let nouns = ['apple', 'sister', 'hammer', 'sun', 'table', 'sky', 'lake'];
-// indeksai:    0       1         2        3       4        5       6    
+let nouns = ['apple', 'sister', 'hammer', 'sun', 'table', 'sky', 'lake' , 'picture' , 'wall' ];
+// indeksai:    0       1         2        3       4        5       6        7           8
 let helpers = ['in', 'with', 'on', 'my', 'is', 'a', 'the', ' '];
 // indeksai:    0       1     2      3     4    5     6     7  
 
@@ -36,3 +36,6 @@ console.log(sentence6);
 let sentence7 = helpers[3] + helpers[7] + nouns[1] + helpers[7] + helpers[4] + helpers[7] + helpers[2] + helpers[7] + helpers[6] + helpers[7] + nouns[5];
 //                'my'          ' '       'sister'      ' '         'is'          ' '         'on'          ' '          'the'       ' '         'sky'
 console.log(sentence7);
+let sentence8 = nouns[7] + helpers[7] + helpers[4] + helpers[7] + helpers[2] + helpers[7] + helpers[6] + helpers[7] +  nouns[8];
+//             'picture'      ' '         'is'        ' '           'on'          ' '         'the'          ' '        'wall'
+console.log(sentence8);
