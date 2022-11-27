@@ -6,6 +6,7 @@ console.groupCollapsed('1. Parašykite funkciją, kuri grąžina pirmą masyvo e
   const numbers = [1, 2, 3];
   const res1 = returnFirst(numbers);
   const resz1 = returnFirst(['vienas', 'du', 'tris']);
+  
   console.log({ res1, reszz1: resz1 });
 }
 console.groupEnd();
