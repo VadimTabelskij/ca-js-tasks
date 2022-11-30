@@ -1,19 +1,24 @@
 console.groupCollapsed('1 - https://edabit.com/challenge/nuXdWHAoHv9y38sn7');
 {
-    function sortDrinkByPrice(drinks) {
-        return drinks.sort((a, b) => a.price - b.price)
+    function byPrice(drink, drinkOther) {
+        return drink.price - drinkOther.price;
     }
 
-    const lemonade = [({ name: "lemonade", price: 50 })];
-    const lime = [({ name: "lime", price: 10 })];
+    function sortDrinkByPrice(drinks) {
+        return drinks.sort(byPrice);
+    }
 
-    const res1 = sortDrinkByPrice(lemonade);
-    const res2 = sortDrinkByPrice(lime);
+    const drinks = [
+        { name: "lemonade", price: 50 },
+        { name: "lime", price: 5 },
+        { name: "fanta", price: 40 },
+        { name: "cola", price: 20 },
+        { name: "pepsi", price: 30 },
+    ];
 
-    console.log(res1, res2);
+    const sortedDrinks = sortDrinkByPrice(drinks);
+    console.table(sortedDrinks)
 }
-console.log();
-
 console.groupEnd();
 
 console.groupCollapsed('2 - https://edabit.com/challenge/9KEKJG5PZTFmG3Zau');
@@ -34,41 +39,47 @@ console.groupEnd();
 
 console.groupCollapsed('3 - https://edabit.com/challenge/48EJWLhF224na8po3');
 {
-    function generation(x, y) {
-        return generations[x + ''][y]
-    }
-    const generations = {
-        '-3': {
-            m: 'great grandfather',
-            f: 'great grandmother',
+    const generationObject = {
+        m: {
+            '-3': 'great grandfather',
+            '-2': 'grandfather',
+            '-1': 'father',
+            0: 'me!',
+            1: 'son',
+            2: 'grandson',
+            3: 'great grandson',
         },
-        '-2': {
-            m: 'grandfather',
-            f: 'grandmother',
-        },
-        '-1': {
-            m: 'father',
-            f: 'mother',
-        },
-        '0': {
-            m: 'me!',
-            f: 'me!',
-        },
-        '1': {
-            m: 'son',
-            f: 'daughter',
-        },
-        '2': {
-            m: 'grandson',
-            f: 'granddaughter',
-        },
-        '3': {
-            m: 'great grandson',
-            f: 'great granddaughter',
+        f: {
+            '-3': 'great grandmother',
+            '-2': 'grandmother',
+            '-1': 'mother',
+            0: 'me!',
+            1: 'daughter',
+            2: 'granddaughter',
+            3: 'great granddaughter',
         }
-    }
-    console.log(generations);
+    };
 
+    function generation(gen, sex) {
+        return generationObject[sex][gen];
+    }
+
+    console.table({
+        "generation(-3, 'm')": generation(-3, 'm'),
+        "generation(-2, 'm')": generation(-2, 'm'),
+        "generation(-1, 'm')": generation(-1, 'm'),
+        "generation(0, 'm')": generation(0, 'm'),
+        "generation(1, 'm')": generation(1, 'm'),
+        "generation(2, 'm')": generation(2, 'm'),
+        "generation(3, 'm')": generation(3, 'm'),
+        "generation(-3, 'f')": generation(-3, 'f'),
+        "generation(-2, 'f')": generation(-2, 'f'),
+        "generation(-1, 'f')": generation(-1, 'f'),
+        "generation(0, 'f')": generation(0, 'f'),
+        "generation(1, 'f')": generation(1, 'f'),
+        "generation(2, 'f')": generation(2, 'f'),
+        "generation(3, 'f')": generation(3, 'f'),
+    });
 }
 console.groupEnd();
 
@@ -81,7 +92,7 @@ console.groupCollapsed('4 - https://edabit.com/challenge/i6YqzHcSiPiEQKjeX');
         }
         return sum;
     }
-    
+
     const res1 = maximumScore([
         { tile: "N", score: 1 },
         { tile: "K", score: 5 },
@@ -107,11 +118,12 @@ console.groupEnd();
 console.groupCollapsed('5 - https://edabit.com/challenge/8s2jy9hR2TAeQinKD');
 {
     function calculateDifference(obj, limit) {
+        const valueArr = Object.values(obj);
         let sum = 0;
-        for (let i in obj)
-            sum += obj[i];
-        return Math.abs(limit - sum);
-    }
+        for (let i = 0; i < valueArr.length; i += 1) sum += valueArr[i];
+    
+        return sum - limit;
+      }
 
     const res2 = calculateDifference({ "baseball bat": 20 }, 5);
     const res1 = calculateDifference({ skate: 10, painting: 20 }, 19);
@@ -137,7 +149,15 @@ console.groupEnd();
 console.groupCollapsed('7 - https://edabit.com/challenge/QXWM2oo7rQNiyDsip');
 {
     function inkLevels(inks) {
-        return Math.min(...Object.values(inks))
+        const valueArr = Object.values(inks);
+        let min = valueArr[0];
+
+        for (let i = 1; i < valueArr.length; i++) {
+            if (valueArr[i] < min) {
+                min = valueArr[i];
+            }
+        }
+        return min;
     }
 
     const res1 = inkLevels({
@@ -163,14 +183,12 @@ console.groupEnd();
 console.groupCollapsed('8 - https://edabit.com/challenge/pLNavsePxJ87t9Nak');
 {
     function calculateLosses(obj) {
-        let arr = Object.values(obj);
-        if (arr.length === 0) {
-            return "Lucky you!"
-        } else {
-            return arr.reduce(function (a, b) {
-                return a + b;
-            }, 0)
+        let sum = 0;
+        for (const key in obj) {
+            sum += obj[key];
         }
+        if (sum > 0) return sum;
+        return 'Lucky you!'
     }
 
     const res1 = calculateLosses({
