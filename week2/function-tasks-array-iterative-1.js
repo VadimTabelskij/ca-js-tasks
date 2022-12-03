@@ -1,3 +1,4 @@
+//Naudojant forEach, map, filter, reduce, pop, push ir kiti Array.prototype metodai
 const people = [
   {
     name: 'Jonas',
@@ -60,7 +61,7 @@ console.groupCollapsed('1. Atspausdinkite visus žmones eilutėmis');
     return person.name.length;
   }
   const all = people.filter(allPeople);
-  console.table(all);
+  console.log(all);
 }
 console.groupEnd();
 
@@ -148,24 +149,67 @@ console.groupEnd();
 
 console.groupCollapsed('10. Sukurkite objektą, kuriame būtų apskaičiuotas vairuojančių žmonių kiekis pagal lytį');
 {
-  // ...sprendimas ir spausdinimas
+
+  let femaleCount = 0;
+  let maleCount = 0;
+
+  function personHaveCar(person) {
+    if (person.sex === 'female' && person.hasCar === true) femaleCount++;
+    else if (person.sex === 'male' && person.hasCar === true) maleCount++;
+  }
+
+  people.forEach(personHaveCar);
+  console.log({ femaleCount, maleCount });
 }
 console.groupEnd();
 
 console.groupCollapsed('11. Performuokite žmonių masyvą, jog kiekvieno žmogaus savybė "income", taptų "salary"');
 {
-  // ...sprendimas ir spausdinimas
+  function changeIncome(person) {
+    return {
+      name: person.name,
+      surname: person.surname,
+      sex: person.sex,
+      age: person.age,
+      salary: person.income,
+      married: person.married,
+      hasCar: person.hasCar,
+    }
+  }
+  const change = people.map(changeIncome);
+  console.log(change);
 }
 console.groupEnd();
 
 console.groupCollapsed('12. Suformuokite žmonių masyvą iš objektų, kuriuose nebūtų lyties, vardo ir pavardės');
 {
-  // ...sprendimas ir spausdinimas
+  function newPeople(person) {
+    return {
+      age: person.age,
+      income: person.income,
+      married: person.married,
+      hasCar: person.hasCar,
+    }
+  }
+  const newPeopleObj = people.map(newPeople);
+  console.table(newPeopleObj);
 }
 console.groupEnd();
 
 console.groupCollapsed('13. Suformuokite žmonių masyvą  iš objektų, kuriuose "name" ir "surname" savybės, būtų pakeistos "fullname" savybe');
 {
-  // ...sprendimas ir spausdinimas
+  function newPersonNameSurname(oldPerson, person) {
+    oldPerson.push({
+      fullname: `${person.name} ${person.surname}`,
+      sex: person.sex,
+      age: person.age,
+      income: person.income,
+      married: person.married,
+      hasCar: person.hasCar
+    });
+    return oldPerson;
+  }
+  const changeNameSurname = people.reduce(newPersonNameSurname, [] );
+  console.log(changeNameSurname);
 }
 console.groupEnd();
