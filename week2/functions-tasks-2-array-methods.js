@@ -1,15 +1,19 @@
 // ----------------------Užduotys--------------------------
+//Naudojant forEach, map, filter, reduce, pop, push ir kiti Array.prototype metodai
 const numbers = [1, 2, -2, 6, -5, 9, 1.02, 45, -69, 77, -12, 2, 8, -2, -4, 59, 7, -3];
 
 console.group('1. Padauginti masyvo narius iš 2 ir išsaugoti naujame masyve');
 console.log('---');
 {
   function mulArrBy2(arr) {
-    // ... code
+    return arr * 2;
   }
+
+  const byToArr = numbers.map(mulArrBy2)
+
   console.log({
     numbers,
-    result: mulArrBy2(numbers)
+    result: byToArr
   });
 }
 console.log('---');
@@ -20,11 +24,14 @@ console.group('2. Pakelti masyvo narius kvadratu ir išsaugoti naujame masyve');
 console.log('---');
 {
   function powerArrBy2(arr) {
-    // ... code
+    return arr * arr;
   }
+
+  const power = numbers.map(powerArrBy2);
+
   console.log({
     numbers,
-    result: powerArrBy2(numbers)
+    result: power
   });
 }
 console.log('---');
@@ -34,12 +41,15 @@ console.log();
 console.group('3. Padauginti masyvo narius iš jų index\'o (vietos masyve) ir išsaugoti naujame masyve');
 console.log('---');
 {
-  function mulArrElementsByIndex(arr) {
-    // ... code
+  function mulArrElementsByIndex(arr, index) {
+    return arr * index;
   }
+
+  const byIndex = numbers.map(mulArrElementsByIndex)
+
   console.log({
     numbers,
-    result: mulArrElementsByIndex(numbers)
+    result: byIndex
   });
 }
 console.log('---');
@@ -50,12 +60,15 @@ console.group('4. Atrinkti tiktai teigimų elementų masyvą');
 console.log('---');
 {
   function filterPositives(arr) {
-    // Jūsų kodas
+    return arr > 0;
   }
-  // console.log({
-  //   numbers,
-  //   result: filterPositives(numbers)
-  // });
+
+  const plus = numbers.filter(filterPositives);
+
+  console.log({
+    numbers,
+    result: plus
+  });
 }
 console.log('---');
 console.groupEnd();
@@ -65,12 +78,15 @@ console.group('5. Atrinkti tiktai neigiamų elementų masyvą');
 console.log('---');
 {
   function filterNegatives(arr) {
-    // Jūsų kodas
+    return arr < 0;
   }
-  // console.log({
-  //   numbers,
-  //   result: filterNegatives(numbers)
-  // });
+
+  const minus = numbers.filter(filterNegatives);
+
+  console.log({
+    numbers,
+    result: minus
+  });
 }
 console.log('---');
 console.groupEnd();
@@ -80,12 +96,15 @@ console.group('6. Atrinkti tiktai lyginių skaičių masyvą');
 console.log('---');
 {
   function filterEquals(arr) {
-    // Jūsų kodas
+    return arr % 2 === 0;
   }
-  // console.log({
-  //   numbers,
-  //   result: filterEquals(numbers)
-  // });
+
+  const filterPlus = numbers.filter(filterEquals);
+
+  console.log({
+    numbers,
+    result: filterPlus
+  });
 }
 console.log('---');
 console.groupEnd();
@@ -95,12 +114,15 @@ console.group('7. Atrinkti tiktai nelyginių skaičių masyvą');
 console.log('---');
 {
   function filterOdds(arr) {
-    // Jūsų kodas
+    return arr % 2 === 1;
   }
-  // console.log({
-  //   numbers,
-  //   result: filterOdds(numbers)
-  // });
+
+  const filterNegative = numbers.filter(filterOdds);
+
+  console.log({
+    numbers,
+    result: filterNegative
+  });
 }
 console.log('---');
 console.groupEnd();
@@ -108,17 +130,28 @@ console.log();
 
 console.group("8. Visas neigiamas vertes masyve padaryti teigiamomis ir išsaugoti į naują masyvą");
 {
-  function arrAbsoluteValues(arr) {
-    // ... code
-  }
+  //   let result = 0;
+  //   if (arr > 0) {
+  //     result = arr;
+  //   } else {
+  //     result = arr * -1;
+  //   }
+  //   return result
+  // }
 
-  console.log('---');
-  console.log({
-    numbers,
-    result: arrAbsoluteValues(numbers)
-  });
-  console.log('---');
+  function arrAbsoluteValues(arr) {
+    return arr > 0 ? arr : arr * -1;
+  }
 }
+const negativeToPlus = numbers.map(arrAbsoluteValues)
+
+console.log('---');
+console.log({
+  numbers,
+  result: negativeToPlus
+});
+console.log('---');
+
 console.groupEnd();
 console.log();
 
@@ -126,12 +159,15 @@ console.group('9. Pakelti visas masyvo reikšmes laipsniu \'index\' ir išsaugot
 console.log('---');
 {
   function powArrElementsByIndex(arr) {
-    // Jūsų kodas
+    return arr.map(function (a, b) {
+      return a + b;
+    });
   }
-  // console.log({
-  //   numbers,
-  //   result: powArrElementsByIndex(numbers)
-  // });
+
+  console.log({
+    numbers,
+    result: powArrElementsByIndex(numbers)
+  });
 }
 console.log('---');
 console.groupEnd();
@@ -141,12 +177,15 @@ console.group('10. Atrinkti tik natūralių skaičių masyvą');
 console.log('---');
 {
   function filterNaturals(arr) {
-    // Jūsų kodas
+    return arr % 1 === 0 && arr > 0;
   }
-  // console.log({
-  //   numbers,
-  //   result: filterNaturals(numbers)
-  // });
+
+  const naturalNumber = numbers.filter(filterNaturals);
+
+  console.log({
+    numbers,
+    result: naturalNumber
+  });
 }
 console.log('---');
 console.groupEnd();
@@ -156,12 +195,15 @@ console.group('11. Suapvalinti visas masyvo reikšmes iki sveikų skaičių ir i
 console.log('---');
 {
   function absArrElements(arr) {
-    // Jūsų kodas
+    return Math.round(arr);
   }
-  // console.log({
-  //   numbers,
-  //   result: absArrElements(numbers)
-  // });
+
+  const elementABS = numbers.map(absArrElements);
+
+  console.log({
+    numbers,
+    result: elementABS
+  });
 }
 console.log('---');
 console.groupEnd()
@@ -169,13 +211,16 @@ console.groupEnd()
 console.group('12. Atrinkti kas antrą elementą');
 console.log('---');
 {
-  function filterEverySecond(arr) {
-    //  Jūsų kodas
+  function filterEverySecond(arr, arrNew) {
+    return arr = arrNew % 2;
   }
-  // console.log({
-  //   numbers,
-  //   result: filterEverySecond(numbers)
-  // });
+
+  const second = numbers.filter(filterEverySecond);
+
+  console.log({
+    numbers,
+    result: second
+  });
 }
 console.log('---');
 console.groupEnd();
@@ -184,12 +229,17 @@ console.group('13. Atrinkti kas penktą elementą');
 console.log('---');
 {
   function filterEveryFifth(arr) {
-    //  Jūsų kodas
+    let numberFifth = [];
+    for (let i = 0; i < numbers.length; i += 5) {
+      numberFifth.push(arr[i]);
+    }
+    return numberFifth;
   }
-  // console.log({
-  //   numbers,
-  //   result: filterEveryFifth(numbers)
-  // });
+
+  console.log({
+    numbers,
+    result: filterEveryFifth(numbers)
+  });
 }
 console.log('---');
 console.groupEnd();
@@ -198,10 +248,15 @@ console.groupEnd();
 console.group('14. Sukurti funkciją, kuri ima masyvą ir atspausdina kiekvieną jo reikšmę atskirai: [0] => 64. (nieko negrąžina)');
 console.log('---');
 {
-  function printArr(arr) {
-    // ... code
+  function printArr() {
+    let i = 0;
+    while (i <= numbers.length - 1) {
+      console.log(`[${[i]}] => ${numbers[i]}`);
+      i++;
+    }
   }
-  printArr(numbers);
+
+  printArr(numbers)
 }
 console.log('---');
 console.groupEnd();
@@ -209,14 +264,16 @@ console.groupEnd();
 console.group('15. Sukurti funkciją, kuri ima masyvą ir grąžina visų elementų sumą');
 console.log('---');
 {
-  function sumArr(arr) {
-    // Jūsų kodas
+  function sumArr(prievArr, arr) {
+    return prievArr + arr;
   }
 
-  // console.log({
-  //   numbers,
-  //   result: sumArr(numbers)
-  // });
+  const sumAllArr = numbers.reduce(sumArr, 0);
+
+  console.log({
+    numbers,
+    result: sumAllArr
+  });
 }
 console.log('---');
 console.groupEnd()
@@ -224,14 +281,16 @@ console.groupEnd()
 console.group('16. Sukurti funkciją, kuri ima masyvą ir grąžina visų elementų vidurkį');
 console.log('---');
 {
-  function avgArr(arr) {
-    // Jūsų kodas
+  function avgArr(prievAvg, arr) {
+    return prievAvg + arr;
   }
 
-  // console.log({
-  //   numbers,
-  //   result: avgArr(numbers)
-  // });
+  const arrAvg = numbers.reduce(avgArr, 0) / numbers.length;
+
+  console.log({
+    numbers,
+    result: arrAvg
+  });
 }
 console.log('---');
 console.groupEnd()
@@ -239,14 +298,26 @@ console.groupEnd()
 console.group('17. Sukurti funkciją, kuri ima masyvą ir grąžina didžiausią skaičių masyve.');
 console.log('---');
 {
-  function arrMax(arr) {
-    //  Jūsų kodas
+  // function arrMax(prievMax, arr) {
+  //   let result = 0;
+  //   if (prievMax > arr) {
+  //     result = prievMax;
+  //   } else {
+  //     result = arr;
+  //   }
+  //   return result
+  // }
+
+  function arrMax(prievMax, arr) {
+    return prievMax > arr ? prievMax : arr
   }
 
-  // console.log({
-  //   numbers,
-  //   result: arrMax(numbers)
-  // });
+  const maxArr = numbers.reduce(arrMax);
+
+  console.log({
+    numbers,
+    result: maxArr
+  });
 }
 console.log('---');
 console.groupEnd()
@@ -254,14 +325,26 @@ console.groupEnd()
 console.group('18. Sukurti funkciją, kuri ima masyvą ir grąžina mažiausią skaičių masyve.');
 console.log('---');
 {
-  function arrMin(arr) {
-    //  Jūsų kodas
+  // function arrMin(prievMin, arr) {
+  //   let result = 0;
+  //   if (prievMin < arr) {
+  //     result = prievMin;
+  //   } else {
+  //     result = arr;
+  //   }
+  //   return result
+  // }
+
+  function arrMin(prievMin, arr) {
+    return prievMin < arr ? prievMin : arr
   }
 
-  // console.log({
-  //   numbers,
-  //   result: arrMin(numbers)
-  // });
+  const minArr = numbers.reduce(arrMin);
+
+  console.log({
+    numbers,
+    result: minArr
+  });
 }
 console.log('---');
 console.groupEnd();
