@@ -24,7 +24,7 @@ console.group('2. Pakelti masyvo narius kvadratu ir išsaugoti naujame masyve');
 console.log('---');
 {
   function powerArrBy2(arr) {
-    return arr ** arr;
+    return arr * arr;
   }
 
   const power = numbers.map(powerArrBy2);

@@ -27,7 +27,7 @@ console.log('---');
   function powerArrBy2(arr) {
     const toArr = [];
     for (let i = 0; i < arr.length; i++) {
-      toArr[i] = arr[i] ** arr[i];
+      toArr[i] = arr[i] * arr[i];
     }
     return toArr;
   }
