@@ -161,6 +161,7 @@ console.log('---');
   function powArrElementsByIndex(arr) {
     return arr.map(function (a, b) {
       return a **= b;
+
     });
   }
 
