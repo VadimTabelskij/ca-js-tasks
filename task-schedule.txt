@@ -13,12 +13,11 @@ iki 12:05 +1 balas prie kontrolinio;
     * functions-tasks-2.js -> pervadinti -> functions-tasks-2-array-methods.js
     
 iki 12-12: +1 balas prie kontrolinio;
-  * functions-tasks-3.js [užduotys 1-20]
+  * functions-tasks-3.js [užduotys 1-27]
+  
+iki 12-19: +1 balas prie kontrolinio;
   * classes-tasks-1.js
   * classes-tasks-2.js
-
-iki 12-19: +1 balas prie kontrolinio;
-  * functions-tasks-3.js [užduotys 21-27]
   * function-tasks-array-iterative-2.js
 
 iki 12-23: +1 balas prie kontrolinio;
@@ -30,4 +29,3 @@ iki 12-23: +1 balas prie kontrolinio;
 Papildomai:
   * recursion tasks.js
   * curry_pratybos
-  
